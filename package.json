@@ -9,7 +9,7 @@
     "start": "npm-run-all --parallel devserver watch:sass --browser=firefox",
     "compile:sass": "sass sass/main.scss css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
-    "compress:css": "sass css/style.prefix.css css/style.css --output-style compressed",
+    "compress:css": "sass css/style.prefix.css css/style.css --style=compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
   "author": "Tronzero",
@@ -17,8 +17,11 @@
   "devDependencies": {
     "autoprefixer": "*",
     "concat": "*",
-    "sass": "*",
     "npm-run-all": "*",
-    "postcss-cli": "*"
+    "postcss-cli": "*",
+    "sass": "*"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001663"
   }
 }
